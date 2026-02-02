@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lindsey – Portfolio</title>
 
-  <!-- Warm luxury fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Playfair+Display:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Warm luxury script + clean sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --beige: #f4efe8;
-      --warm-beige: #ede6dc;
-      --deep-beige: #e2d8cc;
-      --black: #111;
-      --soft-black: #3a3a3a;
+      --cream: #f4efe8;
+      --neutral: #e8ded3;
+      --ivory: #fbf9f6;
+      --deep-charcoal: #2a2a2a;
+      --black: #1c1c1c;
+      --soft-gray: #6f6f6f;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background: var(--beige);
-      color: var(--black);
+      background: var(--cream);
+      color: var(--deep-charcoal);
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
     }
@@ -36,43 +37,32 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      background:
-        linear-gradient(rgba(244,239,232,0.92), rgba(244,239,232,0.92)),
-        url('https://picsum.photos/1200/1600?blur=2');
-      background-size: cover;
-      background-position: center;
+      padding-top: 10vh;
+      padding-bottom: 10vh;
     }
 
     .hero h1 {
-      font-family: 'Italianno', cursive;
-      font-size: clamp(5rem, 14vw, 9rem);
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.6),
-        0 0 25px rgba(255,255,255,0.35);
+      font-family: 'Great Vibes', cursive;
+      font-size: 5.5rem;
+      color: var(--black);
+      margin-bottom: 0.3rem;
     }
 
     .hero p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      color: var(--soft-gray);
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--soft-black);
     }
 
     /* ABOUT */
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 4rem;
       align-items: center;
-      background: var(--warm-beige);
+      background: var(--neutral);
     }
 
     .about img {
@@ -83,15 +73,14 @@
     }
 
     .about h2 {
-      font-family: 'Italianno', cursive;
-      font-size: 4rem;
-      font-weight: 400;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
     }
 
     .about p {
-      max-width: 440px;
-      color: var(--soft-black);
+      color: var(--deep-charcoal);
+      max-width: 460px;
     }
 
     /* STATS */
@@ -99,46 +88,44 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       text-align: center;
-      background: var(--beige);
+      background: var(--cream);
     }
 
     .stat h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 300;
+      font-size: 2rem;
+      font-weight: 400;
     }
 
     .stat span {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 0.95rem;
+      color: var(--soft-gray);
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--soft-black);
     }
 
     /* WORK */
     .work {
-      background: var(--deep-beige);
+      background: var(--ivory);
     }
 
     .work h2 {
-      font-family: 'Italianno', cursive;
-      font-size: 4.5rem;
-      font-weight: 400;
       text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
       margin-bottom: 3rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .grid img {
       width: 100%;
       height: 420px;
       object-fit: cover;
-      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
     .grid img:hover {
@@ -148,72 +135,50 @@
 
     /* CONTACT */
     .contact {
-      background: var(--warm-beige);
       text-align: center;
+      background: var(--neutral);
     }
 
     .contact h2 {
-      font-family: 'Italianno', cursive;
-      font-size: 4rem;
-      font-weight: 400;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
     .contact a {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--black);
+      color: var(--deep-charcoal);
       text-decoration: none;
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 4px;
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--deep-charcoal);
+      padding-bottom: 2px;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.75rem;
-      background: var(--beige);
-      color: var(--soft-black);
-    }
-
-    @media (max-width: 900px) {
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 6rem;
-      }
+      color: var(--soft-gray);
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
-    <div>
-      <h1>Lindsey</h1>
-      <p>Portfolio</p>
-    </div>
+    <h1>Lindsey</h1>
+    <p>Portfolio</p>
   </section>
 
-  <!-- ABOUT -->
   <section class="about">
     <img src="https://picsum.photos/800/1000?1" alt="Lindsey portrait">
     <div>
       <h2>About</h2>
-      <p>
-        Lindsey is a model focused on editorial, commercial, and high-fashion work.
-        Her presence is refined and intentional, bringing warmth, elegance, and
-        confidence to every project.
-      </p>
+      <p>Lindsey is a model focused on editorial, commercial, and high-fashion work with warmth, elegance, and refined intention.</p>
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="stats">
     <div class="stat">
-      <h3>5'9"</h3>
+      <h3>5'9\"</h3>
       <span>Height</span>
     </div>
     <div class="stat">
@@ -226,7 +191,6 @@
     </div>
   </section>
 
-  <!-- WORK -->
   <section class="work">
     <h2>Selected Work</h2>
     <div class="grid">
@@ -239,7 +203,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact">
     <h2>Work With Me</h2>
     <p><a href="mailto:lindsey@email.com">lindsey@email.com</a></p>
