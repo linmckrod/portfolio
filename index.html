@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
 
-  <!-- BADDIE FONT -->
+  <!-- Elegant script font (works everywhere) -->
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
   <style>
@@ -16,8 +16,8 @@
     }
 
     body {
-      background: #000;
-      color: #fff;
+      background: black;
+      color: white;
       font-family: 'Allura', cursive;
       height: 100vh;
       display: flex;
@@ -26,33 +26,20 @@
       overflow: hidden;
     }
 
-    /* SOFT WHITE GLOW */
-    .glow {
-      text-shadow:
-        0 0 8px rgba(255,255,255,0.8),
-        0 0 20px rgba(255,255,255,0.5),
-        0 0 40px rgba(255,255,255,0.3);
-    }
-
-    /* WELCOME */
+    /* WELCOME TEXT */
     #welcome {
-      font-size: clamp(3rem, 10vw, 7rem);
-      letter-spacing: 0.05em;
-      font-weight: 400;
+      font-size: clamp(3.5rem, 12vw, 8rem);
       opacity: 0;
       animation: fadeIn 2s ease forwards;
       cursor: pointer;
-      position: relative;
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,255,255,0.4);
       transition: transform 0.3s ease;
     }
 
     #welcome:hover {
       transform: scale(1.05);
-    }
-
-    
-      50% { opacity: 1; transform: translateX(-50%) scale(1.15); }
-      100% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
     }
 
     @keyframes fadeIn {
@@ -72,7 +59,6 @@
       overflow: hidden;
       border-radius: 14px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
     }
 
     .item img {
@@ -104,7 +90,7 @@
 </head>
 <body>
 
-  <div id="welcome" class="glow">welcome</div>
+  <div id="welcome">welcome</div>
 
   <div id="gallery">
     <div class="item"><img src="https://picsum.photos/400/600?1" alt="work 1"></div>
