@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lindsey Portfolio</title>
+  <title>Lindsey – Portfolio</title>
 
-  <!-- Luxury script (closest web match to reference) -->
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <!-- Editorial fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --beige: #f3efe9;
+      --warm-beige: #e8e1d8;
+      --black: #111;
+      --soft-black: #2a2a2a;
+      --white: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,177 +24,209 @@
     }
 
     body {
-      background: black;
-      color: white;
-      font-family: 'Italianno', cursive;
-      height: 100vh;
-      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: var(--beige);
+      line-height: 1.6;
     }
 
-    .center {
-      position: absolute;
-      inset: 0;
+    section {
+      padding: 6rem 8vw;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity 1s ease;
+      text-align: center;
+      background: var(--beige);
     }
 
-    /* GLOW */
-    .glow {
-      text-shadow:
-        0 0 6px rgba(255,255,255,0.5),
-        0 0 18px rgba(255,255,255,0.35),
-        0 0 36px rgba(255,255,255,0.25);
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
     }
 
-    /* WELCOME */
-    #welcome {
-      font-size: clamp(4rem, 14vw, 9rem);
-      cursor: pointer;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.7),
-        0 0 28px rgba(255,255,255,0.45),
-        0 0 60px rgba(255,255,255,0.3);
-      transform: scaleX(0.95);
+    .hero p {
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--soft-black);
     }
 
-    /* PORTFOLIO PAGE */
-    #portfolio {
-      opacity: 0;
-      pointer-events: none;
-      flex-direction: column;
-      gap: 2rem;
-      padding-top: 4rem;
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: var(--warm-beige);
     }
 
-    #title {
-      font-size: clamp(4rem, 11vw, 6.5rem);
-      letter-spacing: 0;
-      text-shadow:
-        0 0 8px rgba(255,255,255,0.6),
-        0 0 22px rgba(255,255,255,0.4),
-        0 0 45px rgba(255,255,255,0.25);
-      transform: scaleX(0.95);
-    }
-
-    /* CAROUSEL */
-    .carousel {
-      position: relative;
-      display: flex;
-      gap: 2rem;
-      overflow: hidden;
-      padding: 2rem 4rem;
+    .about img {
       width: 100%;
-      max-width: 100vw;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 2rem;
-      transition: transform 0.15s ease-out;
-      will-change: transform;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .item {
-      flex: 0 0 auto;
-      width: 260px;
-      height: 360px;
-      border-radius: 16px;
-      overflow: hidden;
-      scroll-snap-align: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .item img {
-      width: 100%;
-      height: 100%;
+      height: 520px;
       object-fit: cover;
     }
 
-    .item:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px rgba(255,255,255,0.6),
-        0 0 40px rgba(255,255,255,0.35);
-      z-index: 2;
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    .about p {
+      max-width: 420px;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      background: var(--beige);
+    }
+
+    .stat h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+    }
+
+    .stat span {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--soft-black);
+    }
+
+    /* WORK */
+    .work h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .grid img:hover {
+      transform: scale(1.04);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: var(--warm-beige);
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      background: var(--beige);
+    }
+
+    @media (max-width: 900px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- WELCOME SCREEN -->
-  <div id="welcomeScreen" class="center">
-    <div id="welcome" class="glow">Welcome</div>
-  </div>
-
-  <!-- PORTFOLIO -->
-  <div id="portfolio" class="center">
-    <div id="title" class="glow">Lindsey’s Portfolio</div>
-
-    <div class="carousel" id="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="item"><img src="https://picsum.photos/500/700?1"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?2"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?3"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?4"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?5"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?6"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?7"></div>
-        <div class="item"><img src="https://picsum.photos/500/700?8"></div>
-      </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Lindsey</h1>
+      <p>Portfolio</p>
     </div>
-  </div>
+  </section>
 
-  <script>
-    const welcomeScreen = document.getElementById('welcomeScreen');
-    const portfolio = document.getElementById('portfolio');
+  <!-- ABOUT -->
+  <section class="about">
+    <img src="https://picsum.photos/800/1000?1" alt="Lindsey portrait">
+    <div>
+      <h2>About</h2>
+      <p>
+        Lindsey is a model focused on editorial, commercial, and high-fashion work.
+        With a clean aesthetic and strong on-camera presence, she brings intention
+        and elegance to every project.
+      </p>
+    </div>
+  </section>
 
-    welcomeScreen.addEventListener('click', () => {
-      welcomeScreen.style.opacity = '0';
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <h3>5'9"</h3>
+      <span>Height</span>
+    </div>
+    <div class="stat">
+      <h3>Editorial</h3>
+      <span>Specialty</span>
+    </div>
+    <div class="stat">
+      <h3>Worldwide</h3>
+      <span>Available</span>
+    </div>
+  </section>
 
-      setTimeout(() => {
-        welcomeScreen.style.display = 'none';
-        portfolio.style.pointerEvents = 'auto';
-        portfolio.style.opacity = '1';
-      }, 900);
-    });
+  <!-- WORK -->
+  <section class="work">
+    <h2>Selected Work</h2>
+    <div class="grid">
+      <img src="https://picsum.photos/600/900?2">
+      <img src="https://picsum.photos/600/900?3">
+      <img src="https://picsum.photos/600/900?4">
+      <img src="https://picsum.photos/600/900?5">
+      <img src="https://picsum.photos/600/900?6">
+      <img src="https://picsum.photos/600/900?7">
+    </div>
+  </section>
 
-    // CURSOR-DRIVEN CAROUSEL (FIXED)
-    const carousel = document.getElementById('carousel');
-    const track = document.getElementById('carouselTrack');
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Work With Me</h2>
+    <p><a href="mailto:lindsey@email.com">lindsey@email.com</a></p>
+  </section>
 
-    let maxTranslate = 0;
-
-    function updateBounds() {
-      maxTranslate = track.scrollWidth - carousel.clientWidth;
-      if (maxTranslate < 0) maxTranslate = 0;
-    }
-
-    window.addEventListener('resize', updateBounds);
-    updateBounds();
-
-    carousel.addEventListener('mousemove', (e) => {
-      const rect = carousel.getBoundingClientRect();
-      const percent = (e.clientX - rect.left) / rect.width;
-      const translateX = -maxTranslate * percent;
-      track.style.transform = `translateX(${translateX}px)`;
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-      track.style.transform = 'translateX(0px)';
-    });
-  </script>
+  <footer>
+    © Lindsey Portfolio
+  </footer>
 
 </body>
 </html>
