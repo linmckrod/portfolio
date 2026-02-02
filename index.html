@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome</title>
+  <title>Lindsey Portfolio</title>
 
-  <!-- Elegant script font (works everywhere) -->
+  <!-- Thin luxury script -->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
   <style>
@@ -20,42 +20,68 @@
       color: white;
       font-family: 'Italianno', cursive;
       height: 100vh;
+      overflow: hidden;
+    }
+
+    .center {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      transition: opacity 1s ease;
     }
 
-    /* WELCOME TEXT */
+    /* GLOW */
+    .glow {
+      text-shadow:
+        0 0 6px rgba(255,255,255,0.5),
+        0 0 18px rgba(255,255,255,0.35),
+        0 0 36px rgba(255,255,255,0.25);
+    }
+
+    /* WELCOME */
     #welcome {
-      font-size: clamp(3.5rem, 12vw, 8rem);
+      font-size: clamp(4rem, 14vw, 9rem);
+      cursor: pointer;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      cursor: pointer;
-      text-shadow: 0 0 6px rgba(255,255,255,0.4);
-      transition: transform 0.3s ease;
     }
 
-    #welcome:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    /* GALLERY */
-    #gallery {
-      display: none;
+    /* PORTFOLIO PAGE */
+    #portfolio {
+      opacity: 0;
+      pointer-events: none;
+      flex-direction: column;
       gap: 2rem;
-      padding: 2rem;
+      padding-top: 4rem;
+    }
+
+    #title {
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      letter-spacing: 0.12em;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 2rem 4rem;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
     }
 
     .item {
-      width: 220px;
-      height: 300px;
+      flex: 0 0 auto;
+      width: 260px;
+      height: 360px;
+      border-radius: 16px;
       overflow: hidden;
-      border-radius: 14px;
+      scroll-snap-align: center;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
@@ -63,54 +89,54 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .item:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
       box-shadow:
-        0 0 20px rgba(255,255,255,0.7),
-        0 0 40px rgba(255,255,255,0.4);
+        0 0 20px rgba(255,255,255,0.6),
+        0 0 40px rgba(255,255,255,0.35);
       z-index: 2;
     }
 
-    @media (max-width: 768px) {
-      #gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .item:hover {
-        transform: scale(1.05);
-      }
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <div id="welcome">Welcome</div>
+  <!-- WELCOME SCREEN -->
+  <div id="welcomeScreen" class="center">
+    <div id="welcome" class="glow">Welcome</div>
+  </div>
 
-  <div id="gallery">
-    <svg width="500" height="120" viewBox="0 0 500 120" style="margin-bottom: 1rem;">
-      <defs>
-        <path id="curve" d="M 50 100 Q 250 10 450 100" />
-      </defs>
-      <text width="500" text-anchor="middle" fill="white" style="font-family: 'Italianno', cursive; font-size: 48px;">
-        <textPath href="#curve" startOffset="50%">Lindsey’s Portfolio</textPath>
-      </text>
-    </svg>
-    <div class="item"><img src="https://picsum.photos/400/600?1" alt="work 1"></div>
-    <div class="item"><img src="https://picsum.photos/400/600?2" alt="work 2"></div>
-    <div class="item"><img src="https://picsum.photos/400/600?3" alt="work 3"></div>
+  <!-- PORTFOLIO -->
+  <div id="portfolio" class="center">
+    <div id="title" class="glow">Lindsey’s Portfolio</div>
+
+    <div class="carousel">
+      <div class="item"><img src="https://picsum.photos/500/700?1"></div>
+      <div class="item"><img src="https://picsum.photos/500/700?2"></div>
+      <div class="item"><img src="https://picsum.photos/500/700?3"></div>
+      <div class="item"><img src="https://picsum.photos/500/700?4"></div>
+      <div class="item"><img src="https://picsum.photos/500/700?5"></div>
+      <div class="item"><img src="https://picsum.photos/500/700?6"></div>
+    </div>
   </div>
 
   <script>
-    const welcome = document.getElementById('welcome');
-    const gallery = document.getElementById('gallery');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const portfolio = document.getElementById('portfolio');
 
-    welcome.addEventListener('click', () => {
-      welcome.style.display = 'none';
-      gallery.style.display = 'flex';
+    welcomeScreen.addEventListener('click', () => {
+      welcomeScreen.style.opacity = '0';
+
+      setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+        portfolio.style.pointerEvents = 'auto';
+        portfolio.style.opacity = '1';
+      }, 900);
     });
   </script>
 
