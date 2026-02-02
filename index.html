@@ -6,7 +6,7 @@
   <title>Welcome</title>
 
   <!-- BADDIE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,7 +18,7 @@
     body {
       background: #000;
       color: #fff;
-      font-family: 'Prata', serif;
+      font-family: 'Allura', cursive;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -37,7 +37,7 @@
     /* WELCOME */
     #welcome {
       font-size: clamp(3rem, 10vw, 7rem);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.05em;
       font-weight: 400;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
@@ -50,33 +50,7 @@
       transform: scale(1.05);
     }
 
-    /* SPARKLES / BEDAZZLES */
-    #welcome::before,
-    #welcome::after {
-      content: "✦ ✧ ✦ ✧ ✦";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.2rem;
-      opacity: 0.6;
-      animation: sparkle 2.5s infinite ease-in-out;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 25px rgba(255,255,255,0.7);
-      pointer-events: none;
-    }
-
-    #welcome::before {
-      top: -2.8rem;
-    }
-
-    #welcome::after {
-      bottom: -2.8rem;
-      animation-delay: 1.2s;
-    }
-
-    @keyframes sparkle {
-      0% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
+    
       50% { opacity: 1; transform: translateX(-50%) scale(1.15); }
       100% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
     }
