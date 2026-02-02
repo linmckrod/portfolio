@@ -6,7 +6,7 @@
   <title>Welcome</title>
 
   <!-- Elegant script font (works everywhere) -->
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,7 +18,7 @@
     body {
       background: black;
       color: white;
-      font-family: 'Allura', cursive;
+      font-family: 'Italianno', cursive;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -32,9 +32,7 @@
       opacity: 0;
       animation: fadeIn 2s ease forwards;
       cursor: pointer;
-      text-shadow:
-        0 0 8px rgba(255,255,255,0.6),
-        0 0 20px rgba(255,255,255,0.4);
+      text-shadow: 0 0 6px rgba(255,255,255,0.4);
       transition: transform 0.3s ease;
     }
 
@@ -90,9 +88,17 @@
 </head>
 <body>
 
-  <div id="welcome">welcome</div>
+  <div id="welcome">Welcome</div>
 
   <div id="gallery">
+    <svg width="500" height="120" viewBox="0 0 500 120" style="margin-bottom: 1rem;">
+      <defs>
+        <path id="curve" d="M 50 100 Q 250 10 450 100" />
+      </defs>
+      <text width="500" text-anchor="middle" fill="white" style="font-family: 'Italianno', cursive; font-size: 48px;">
+        <textPath href="#curve" startOffset="50%">Lindsey’s Portfolio</textPath>
+      </text>
+    </svg>
     <div class="item"><img src="https://picsum.photos/400/600?1" alt="work 1"></div>
     <div class="item"><img src="https://picsum.photos/400/600?2" alt="work 2"></div>
     <div class="item"><img src="https://picsum.photos/400/600?3" alt="work 3"></div>
