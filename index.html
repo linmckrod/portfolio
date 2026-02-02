@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
+
+  <!-- BADDIE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -23,18 +26,19 @@
       overflow: hidden;
     }
 
+    /* SOFT WHITE GLOW */
     .glow {
       text-shadow:
-        0 0 10px rgba(255,255,255,0.6),
-        0 0 20px rgba(255,255,255,0.4),
-        0 0 40px rgba(255,255,255,0.2);
+        0 0 8px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.5),
+        0 0 40px rgba(255,255,255,0.3);
     }
 
-    /* WELCOME SCREEN */
+    /* WELCOME */
     #welcome {
       font-size: clamp(3rem, 10vw, 7rem);
+      letter-spacing: 0.18em;
       font-weight: 400;
-      letter-spacing: 0.15em;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
       cursor: pointer;
@@ -42,21 +46,39 @@
       transition: transform 0.3s ease;
     }
 
-    /* GLITTER EFFECT */
+    #welcome:hover {
+      transform: scale(1.05);
+    }
+
+    /* SPARKLES / BEDAZZLES */
     #welcome::before,
     #welcome::after {
       content: "✦ ✧ ✦ ✧ ✦";
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      color: white;
       font-size: 1.2rem;
-      opacity: 0.7;
+      opacity: 0.6;
       animation: sparkle 2.5s infinite ease-in-out;
-      tex
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 25px rgba(255,255,255,0.7);
+      pointer-events: none;
+    }
 
-    #welcome:hover {
-      transform: scale(1.05);
+    #welcome::before {
+      top: -2.8rem;
+    }
+
+    #welcome::after {
+      bottom: -2.8rem;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
+      50% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+      100% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
     }
 
     @keyframes fadeIn {
@@ -74,7 +96,7 @@
       width: 220px;
       height: 300px;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 14px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
     }
@@ -89,7 +111,7 @@
     .item:hover {
       transform: scale(1.2);
       box-shadow:
-        0 0 20px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,255,255,0.7),
         0 0 40px rgba(255,255,255,0.4);
       z-index: 2;
     }
@@ -128,7 +150,3 @@
 
 </body>
 </html>
-
-</body>
-</html>
-
