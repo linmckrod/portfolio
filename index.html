@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lindsey – Portfolio</title>
 
-  <!-- Editorial fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Warm luxury fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Playfair+Display:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --beige: #f3efe9;
-      --warm-beige: #e8e1d8;
+      --beige: #f4efe8;
+      --warm-beige: #ede6dc;
+      --deep-beige: #e2d8cc;
       --black: #111;
-      --soft-black: #2a2a2a;
-      --white: #ffffff;
+      --soft-black: #3a3a3a;
     }
 
     * {
@@ -24,10 +24,10 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--black);
       background: var(--beige);
-      line-height: 1.6;
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
     }
 
     section {
@@ -41,20 +41,27 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: var(--beige);
+      background:
+        linear-gradient(rgba(244,239,232,0.92), rgba(244,239,232,0.92)),
+        url('https://picsum.photos/1200/1600?blur=2');
+      background-size: cover;
+      background-position: center;
     }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 300;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
+      font-family: 'Italianno', cursive;
+      font-size: clamp(5rem, 14vw, 9rem);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 25px rgba(255,255,255,0.35);
     }
 
     .hero p {
+      font-family: 'Playfair Display', serif;
       font-size: 1rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--soft-black);
     }
@@ -63,26 +70,28 @@
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
       background: var(--warm-beige);
     }
 
     .about img {
       width: 100%;
-      height: 520px;
+      height: 560px;
       object-fit: cover;
+      border-radius: 2px;
     }
 
     .about h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
+      font-family: 'Italianno', cursive;
+      font-size: 4rem;
+      font-weight: 400;
       margin-bottom: 1rem;
     }
 
     .about p {
-      max-width: 420px;
+      max-width: 440px;
+      color: var(--soft-black);
     }
 
     /* STATS */
@@ -100,68 +109,80 @@
     }
 
     .stat span {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--soft-black);
     }
 
     /* WORK */
+    .work {
+      background: var(--deep-beige);
+    }
+
     .work h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
+      font-family: 'Italianno', cursive;
+      font-size: 4.5rem;
+      font-weight: 400;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .grid img {
       width: 100%;
       height: 420px;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
     }
 
     .grid img:hover {
-      transform: scale(1.04);
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
     /* CONTACT */
     .contact {
-      text-align: center;
       background: var(--warm-beige);
+      text-align: center;
     }
 
     .contact h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
+      font-family: 'Italianno', cursive;
+      font-size: 4rem;
+      font-weight: 400;
       margin-bottom: 1rem;
     }
 
     .contact a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
       color: var(--black);
       text-decoration: none;
       border-bottom: 1px solid var(--black);
-      padding-bottom: 2px;
+      padding-bottom: 4px;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       background: var(--beige);
+      color: var(--soft-black);
     }
 
     @media (max-width: 900px) {
       .about {
         grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 6rem;
       }
     }
   </style>
@@ -183,8 +204,8 @@
       <h2>About</h2>
       <p>
         Lindsey is a model focused on editorial, commercial, and high-fashion work.
-        With a clean aesthetic and strong on-camera presence, she brings intention
-        and elegance to every project.
+        Her presence is refined and intentional, bringing warmth, elegance, and
+        confidence to every project.
       </p>
     </div>
   </section>
