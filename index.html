@@ -133,13 +133,22 @@
       font-size: 4.5rem;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    /* CENTERED PARAGRAPH */
+    .work p {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      color: #4b3a30;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2.5rem;
+      overflow: visible;
     }
 
     .grid img {
@@ -148,7 +157,13 @@
       object-fit: cover;
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 1.2s ease, transform 1.2s ease;
+      transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        scale 0.4s ease,
+        object-fit 0.4s ease;
+      cursor: pointer;
+      z-index: 1;
     }
 
     .grid img.visible {
@@ -156,9 +171,13 @@
       transform: translateY(0);
     }
 
+    /* FULL GIF + GROW ON HOVER */
     .grid img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      transform: scale(1.2);
+      object-fit: contain;
+      z-index: 10;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.15);
     }
 
     /* ================= CONTACT ================= */
@@ -216,12 +235,11 @@
     <div>
       <h2>About</h2>
       <p>
-       I'm glad you asked! I am a Junior at Cuny Hunter College, currently studying media as my major and marketing as my minor. 
+        I'm glad you asked! I am a Junior at Cuny Hunter College, currently studying media as my major and marketing as my minor. 
         I have a background in both the theatrical world as well as the technical world, with experience in graphic design, coding 
         websites as well as working as a light and audio technician at school productions! I have knowledge and passion for the arts 
         and I aim to gain more in every aspect that I possibly can. The most important thing you should know about 
         me is that I celebrate my identity as a woman of color and align myself with brands and companies that do the same.
-      </p>
       </p>
     </div>
   </section>
@@ -247,9 +265,8 @@
     <h2>Sample Project</h2>
     <p>
       I was tasked with designing a website as well as creating a logo for a small business. 
-      The owner wanted a minimalistic, yet, unique website that customers can maneouver through easily. 
-      The owner also wanted a logo that stands out and was complimentary to the website. What you see here is the final 
-      website's homepage on mobile view, my process for creating the logo, and the finished product! 
+      The owner wanted a minimalistic, yet unique website that customers can maneuver through easily. 
+      The owner also wanted a logo that stands out and was complimentary to the website.
     </p>
     <div class="grid">
       <img src="0EAC969D-86A6-4C8B-A821-4E7D913D53AE.GIF">
@@ -261,7 +278,7 @@
   <!-- CONTACT -->
   <section class="contact">
     <h2>Contact Information</h2>
-    <p><a href="mailto:Lindseymckrod@gmail.com">lindseymckrod@gmail.com</a></p>
+    <p><a href="mailto:Lindseymckrod@gmail.com">Lindseymckrod@gmail.com</a></p>
   </section>
 
   <footer>
